@@ -1,0 +1,15 @@
+
+
+<template name="text">
+  <view class="sli-text-view">
+      <text class="sli-text" bindtap="openText">参考广东电力市场交易基本规则（试行）2017-1-17</text>
+  </view>
+</template>
+
+
+<template name="footer">
+    <view class="btn-phone" bindtap="call">
+          <image class="img-phone" src="../../../../image/phone.png"></image><text>{{num}}</text>
+    </view>
+</template>
+

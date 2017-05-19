@@ -1,0 +1,43 @@
+@import "../../../common/lib/weui.wxss";
+@import "../../../common/jymain.wxss";
+@import "../../../common/lib/font-icon.wxss";
+.text-title{
+  font-size: 30rpx;
+  color: #00AAEE;
+  width: 260rpx;
+  margin: 60rpx auto 50rpx auto;
+	display:flex;
+}
+.text-title2{
+  font-size: 30rpx;
+  color: #00AAEE;
+  width: 212rpx;
+  margin: 60rpx auto 50rpx auto;
+	display:flex;
+}
+.text-title3{
+  font-size: 30rpx;
+  color: #00AAEE;
+  width: 244rpx;
+  margin: 60rpx auto 50rpx auto;
+	display:flex;
+}
+.title-line{
+  width: 50rpx;
+  height: 4rpx;
+  border-radius: 2rpx;
+  background-color: #00AAEE;
+  margin-top:20rpx;
+  margin-left:10rpx;
+  margin-right:10rpx;
+
+}
+.text-line{
+  margin-left: 1.7rem;
+}
+.text-content{
+  font-size: 28rpx;
+  color: #3a3a3a;
+  line-height: 64rpx;
+  margin: 0  24rpx;
+}

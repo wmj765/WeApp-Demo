@@ -1,0 +1,90 @@
+@import "../../../common/lib/weui.wxss";
+@import "../../../common/jymain.wxss";
+.result-text{
+  height: 234rpx;
+  margin: 24rpx;
+  background-color: #ffffff
+}
+.result-num{
+  font-size: 80rpx;
+  color: #00AAEE;
+}
+.result-unit{
+  font-size: 24rpx;
+  color: #8d8d8d;
+}
+.result-title{
+  font-size: 30rpx;
+  color: #8d8d8d;
+  padding-top: 24rpx;
+  margin-left: 24rpx;
+}
+.result-content{
+  margin-top: 46rpx;
+  margin-left: auto;
+  margin-right: auto;
+  height:80rpx;
+  line-height:80rpx;
+  text-align: center;
+}
+
+.presult-text{
+  height: 234rpx;
+  margin: 24rpx;
+  background-color: #ffffff;
+  display: flex;
+}
+.presult-num{
+  font-size: 68rpx;
+  color: #00AAEE;
+}
+.presult-num-mini{
+  font-size: 40rpx;
+  color: #00AAEE;
+}
+.presult-unit{
+  font-size: 24rpx;
+  color: #8d8d8d;
+}
+.presult-title{
+  font-size: 30rpx;
+  color: #8d8d8d;
+  padding-top: 24rpx;
+}
+.presult-content{
+  width: 270rpx;
+  margin-top: 60rpx;
+  margin-left: 36rpx;
+  height:68rpx;
+  line-height:68rpx;
+}
+.presult-line{
+  height:212rpx;
+  background-color:#e6e6e6;
+  margin-top:11rpx;
+  margin-left:17rpx;
+  border-left:1px solid #f5f5f5;
+}
+.presult-main{
+  margin-left: 24rpx;
+}
+
+.leftTriangle{
+  width: 0;
+  height: 0;
+  margin-left: 10rpx;
+  margin-right: -3rpx;
+  border-top: 10rpx solid transparent;
+  border-right: 20rpx solid #00AAEE;
+  border-bottom: 10rpx solid transparent;
+}
+
+.rightTriangle{
+  width: 0;
+  height: 0;
+  margin-left: 12rpx;
+  margin-right: 10rpx;
+  border-top: 10rpx solid transparent;
+  border-left: 20rpx solid #00AAEE;
+  border-bottom: 10rpx solid transparent;
+}

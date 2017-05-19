@@ -1,0 +1,30 @@
+
+<import src="../../../common/jyTemplate.wxml" />
+<view class="text-title">
+        <view class="title-line"></view>
+        <text>保底分成</text>
+        <view class="title-line"></view>
+</view>
+<view class="text-content">
+<text class="text-line">双方</text>
+约定合同保底价差、代理服务费比例、分成比例和偏差考核占比，用户获得的保底价差收益按代理服务费比例缴纳代理服务费用，超过保底费用的，超过部分按分成比例双方进行分成，出现电量偏差时双方按偏差考核占比承担相应的考核。
+</view>
+
+<view class="text-title2">
+        <view class="title-line"></view>
+        <text>分成</text>
+        <view class="title-line"></view>
+</view>
+<view class="text-content">
+<text class="text-line">双方</text>约定分成比例和偏差考核占比，获得的收益按分成比例双方进行分成，出现电量偏差时双方按偏差考核占比承担相应的考核。
+</view>
+
+<view class="text-title3">
+        <view class="title-line"></view>
+        <text>一口价</text>
+        <view class="title-line"></view>
+</view>
+<view class="text-content">
+<text class="text-line">双方</text>约定合同保底价差，用户获得的保底价差收益按代理服务费比例向售电公司缴纳代理服务费用，超过保底费用的，超过部分为售电公司收益，出现电量偏差时双方按偏差考核占比承担相应的考核。
+</view>
+<template is="footer" data="{{num:phonenum}}" />

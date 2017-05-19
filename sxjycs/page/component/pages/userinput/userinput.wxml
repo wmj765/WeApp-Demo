@@ -1,0 +1,173 @@
+
+<import src="../../../common/jyTemplate.wxml" />
+<view class="body">
+  <view class="nav bc_white">
+    <view class="{{selected?'select':'default'}}" bindtap="selected">电力用户</view>
+    <view class="{{selected1?'select':'default'}}" bindtap="selected1">售电公司</view>
+  </view>
+  <!--第一页-->
+  <view class="{{selected?'show':'hidden'}}">
+  <view class="result-text">
+      <view class="result-title">预计收益</view>
+          <view class="result-content">
+              <text class="result-num">{{totalBenefit}}</text>
+              <text class="result-unit">万元</text>
+          </view>
+      </view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="weui-cells">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="sli-title">市场区域</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <view class="weui-input sli-content">{{array[index]}}</view>
+        </picker>
+      </view>
+      <text class="sli-arrow">></text>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="sli-title">交易品类</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange="bindStylePickerChange" value="{{index1}}" range="{{array1}}">
+          <view class="weui-input sli-content">{{array1[index1]}}</view>
+        </picker>
+      </view>
+      <text class="sli-arrow">></text>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="sli-title">申报电量</view>
+      </view>
+      <view class="weui-cell__bd">
+       <input type="digit" class="weui-input sli-content"  bindinput="bindKeyInput" id="applyPower" value="{{applyPower}}" />
+      </view>
+      <label class="leftTriangle" id="applyPowerUnitSwitch" bindtap="contUnitSwith"></label>
+      <text class="sli-unit"  id="applyPowerUnitSwitch" bindtap="contUnitSwith">{{contUnitArray[powerIndex]}}</text>
+      <label class="rightTriangle" id="applyPowerUnitSwitch" bindtap="contUnitSwith"></label>
+    </view>
+    
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="sli-title">申报电价</view>
+      </view>
+      <view class="weui-cell__bd">
+       <input type="digit" class="weui-input sli-content" bindblur="bindKeyblur" bindinput="bindKeyInput" id="applyPrice" dir="rtl"  value="{{applyPrice}}" />
+      </view>
+      <label class="leftTriangle" id="applyPriceUnitSwitch" bindtap="comApplyUnitSwith"></label>
+      <text class="sli-unit" id="applyPriceUnitSwitch" bindtap="comApplyUnitSwith">{{priceUnitArray[priceIndex]}}</text>
+      <label class="rightTriangle" id="applyPriceUnitSwitch" bindtap="comApplyUnitSwith"></label>
+    </view>
+  
+  </view>
+
+  <view class="flex-wrp btn-group" style="flex-direction:row;">
+      <view class="button-sp-area">
+          <button class="sli-btn-reset" formType="reset" type="my-btn"  plain="true">重置</button>
+      </view>
+      <view class="button-sp-area">
+          <button class="sli-btn-submit" formType="submit"  plain="true" calculate>测算</button>
+      </view>
+  </view>
+  </form>
+  </view>
+  <!--第二页-->
+  <view class="{{selected1?'show':'hidden'}}">
+        <view class="presult-text">
+        <view class="presult-main">
+            <view class="presult-title">用户预计收益</view>
+            <view class="presult-content">
+                <text class="{{textcss?'presult-num':'presult-num-mini'}}">{{consTotalBenefit}}</text>
+                <text class="presult-unit">万元</text>
+            </view>
+        </view>
+        <view class="presult-line"></view>
+        <view class="presult-main">
+            <view class="presult-title">售电公司预计收益</view>
+            <view class="presult-content">
+                <text class="{{textcss?'presult-num':'presult-num-mini'}}">{{compTotalBenefit}}</text>
+                <text class="presult-unit">万元</text>
+            </view>
+        </view>
+
+      </view>
+<form bindsubmit="comFormSubmit" bindreset="comFormReset">
+  <view class="weui-cells">
+        <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="sli-title">市场区域</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange="bindComPickerChange" value="{{index}}" range="{{array}}">
+          <view class="weui-input sli-content">{{array[index]}}</view>
+        </picker>
+      </view>
+      <text class="sli-arrow">></text>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="sli-title">交易品类</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange="bindComStylePickerChange" value="{{index1}}" range="{{array1}}">
+          <view class="weui-input sli-content">{{array1[index1]}}</view>
+        </picker>
+      </view>
+      <text class="sli-arrow">></text>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="sli-title">申报电量</view>
+      </view>
+      <view class="weui-cell__bd">
+       <input type="digit" class="weui-input sli-content"  bindinput="bindKeyInput" id="comApplyPower" value="{{comApplyPower}}" />
+      </view>
+      <label class="leftTriangle" id="comApplyPowerUnitSwitch" bindtap="contUnitSwith"></label>
+      <text id="comApplyPowerUnitSwitch" bindtap="contUnitSwith" class="sli-unit">{{contUnitArray[contIndex]}}</text>
+      <label class="rightTriangle" id="comApplyPowerUnitSwitch" bindtap="contUnitSwith"></label>
+    </view>
+    
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="sli-title">申报电价</view>
+      </view>
+      <view class="weui-cell__bd">
+       <input type="digit" class="weui-input sli-content" bindinput="bindKeyInput" id="comApplyPrice" dir="rtl"  value="{{comApplyPrice}}" />
+      </view>
+      <label class="leftTriangle" id="comApplyPriceUnitSwitch" bindtap="comApplyUnitSwith"></label>
+      <label class="sli-unit" id="comApplyPriceUnitSwitch" bindtap="comApplyUnitSwith">{{priceUnitArray[comPriceIndex]}}</label>
+      <label class="rightTriangle" id="comApplyPriceUnitSwitch" bindtap="comApplyUnitSwith"></label>
+    </view>
+
+        <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="sli-title">代理合同约定电价</view>
+      </view>
+      <view class="weui-cell__bd">
+       <input type="digit" class="weui-input sli-content" bindinput="bindKeyInput" id="agcyPrice" dir="rtl"  value="{{agcyPrice}}" />
+      </view>
+      <label class="leftTriangle" id="agcyPriceUnitSwitch" bindtap="comApplyUnitSwith"></label>
+      <label class="sli-unit" id="agcyPriceUnitSwitch" bindtap="comApplyUnitSwith" >{{priceUnitArray[agcyPriceIndex]}}</label>
+      <label class="rightTriangle" id="agcyPriceUnitSwitch" bindtap="comApplyUnitSwith"></label>
+    </view>
+
+  </view>
+    <view class="flex-wrp btn-group" style="flex-direction:row;">
+      <view class="button-sp-area">
+          <button class="sli-btn-reset" formType="reset" type="my-btn"  plain="true">重置</button>
+      </view>
+      <view class="button-sp-area">
+          <button class="sli-btn-submit" formType="submit"  plain="true" >测算</button>
+      </view>
+  </view>
+</form>
+  </view>
+  <template is="footer" data="{{num:phonenum}}" />
+</view>
